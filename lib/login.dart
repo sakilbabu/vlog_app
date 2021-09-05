@@ -66,13 +66,15 @@ class Login extends StatelessWidget {
                           ),
                           ElevatedButton(
                               onPressed: () {
-                                if (_text.text == "sakil" &&
-                                    _pass.text == "1234") {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HomePage()),
-                                  );
+                                if (names.contains(_text.text)) {
+                                  var index = names.indexOf(_text.text);
+                                  if (pass[index] == _pass.text) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomePage()),
+                                    );
+                                  }
                                 }
                               },
                               child: Text("login"))

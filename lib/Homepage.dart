@@ -33,56 +33,52 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SingleChildScrollView(
-            child: Container(
-              height: 520,
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: nameOfCountries.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: InkWell(
-                        onTap: () {},
-                        child: Card(
-                            child: Column(
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image.network(
-                                  photoOfCountries[index],
-                                  width: MediaQuery.of(context).size.width,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        IconButton(
-                                            onPressed: () {
-                                              icon = Icon(Icons.favorite_border,
-                                                  color: Colors.red);
-                                            },
-                                            icon: icon),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        Text(
-                                          nameOfCountries[index],
-                                          style: TextStyle(fontSize: 30),
-                                        )
-                                      ]),
-                                ),
-                              ],
-                            )
-                          ],
-                        )),
-                      ),
-                    );
-                  }),
-            ),
+          Container(
+            height: 520,
+            child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: nameOfCountries.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Card(
+                          child: Column(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.network(
+                                photoOfCountries[index],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      IconButton(
+                                          onPressed: () {
+                                            icon = Icon(Icons.favorite_border,
+                                                color: Colors.red);
+                                          },
+                                          icon: icon),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Text(
+                                        nameOfCountries[index],
+                                        style: TextStyle(fontSize: 30),
+                                      )
+                                    ]),
+                              ),
+                            ],
+                          )
+                        ],
+                      )),
+                    ),
+                  );
+                }),
           ),
           BottomNavigationBar(
             items: <BottomNavigationBarItem>[
